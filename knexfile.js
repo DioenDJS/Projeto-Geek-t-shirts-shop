@@ -3,7 +3,7 @@
 module.exports = {
 
   development: {
-    client: 'mysql2',
+    client: 'mysql',
     connection: {
       host:     '127.0.0.1',
       database: 'camisetas',

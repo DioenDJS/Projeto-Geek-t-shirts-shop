@@ -1,1 +1,1 @@
-web: node app
+web: knex migrate:latest && node app

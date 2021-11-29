@@ -3,13 +3,8 @@
 module.exports = {
 
   development: {
-    client: 'mysql2',
-    connection: {
-      host:     '127.0.0.1',
-      database: 'camisetas',
-      user:     'root',
-      password: '1234'
-    },
+    client: 'pg',
+    url: process.env.DATABASE_URL,
     migrations: {
       tableName: 'migrations',
       directory: 'database/migrations'

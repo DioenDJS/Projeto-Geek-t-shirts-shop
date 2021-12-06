@@ -13,6 +13,8 @@ exports.up = (knex) => {
          .onDelete("restrict")
          .onUpdate("cascade")
 
+    table.integer('likes').notNullable().defaultTo(0);
+    table.integer('dislikes').notNullable().defaultTo(0);
     // cria os campos created_at e updated_at
     table.timestamps(true, true);
   })

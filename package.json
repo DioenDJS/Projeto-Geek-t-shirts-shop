@@ -7,7 +7,7 @@
     "dev": " nodemon ./app.js",
     "migrate:latest": "knex --knexfile knexfile.js migrate:latest",
     "migrate:rollback": "knex --knexfile knexfile.js migrate:rollback",
-    "migrate:make": "knex --knexfile knexfile.js migrate:make -x ts"
+    "migrate:make": "knex --knexfile knexfile.js migrate:make -x js"
   },
   "keywords": [],
   "author": "",

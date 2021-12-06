@@ -4,13 +4,13 @@ exports.up = (knex) => {
       table.increments();
       table.integer("usuario_id").notNullable().unsigned();
       table.foreign("usuario_id")
-           .references("usuario_id")
+           .references("usuarios.id")
            .onDelete("restrict")
            .onUpdate("cascade");
 
       table.integer("camiseta_id").notNullable().unsigned();
       table.foreign('camiseta_id')
-           .references("camisetas_id")
+           .references("camisetas.id")
            .onDelete("restrict")
            .onUpdate("cascade"); 
       

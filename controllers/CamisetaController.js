@@ -124,5 +124,39 @@ module.exports = {
       res.status(400).json({ ok: 0, msg: `Erro na exclusão: ${error.message}` });
     }
   },
+
+  async like(req, res){
+    const id = req.params.id;
+
+    dados = await knex("camisetas").where({id});
+
+    const munLike = dados[0].likes;
+
+    try{
+      await knex("camisetas").update({likes:munLike+1}).where({id});
+      res.status(200).json({ok: 1});
+    }catch(err){
+      res
+        .status(400)
+        .json({ok:0, msg: `Erro na alteração ${error.message}`});
+    }
+  },
+
+  async dislike(req, res){
+    const id = req.params.id;
+
+    dados = await knex("camisetas").where({id});
+
+    const munDislike = dados[0].dislikes;
+
+    try{
+      await knex("camisetas").update({dislikes:munDislike+1}).where({id});
+      res.status(200).json({ok: 1});
+    }catch(err){
+      res
+        .status(400)
+        .json({ok:0, msg: `Erro na alteração ${error.message}`});
+    }
+  }
     
 };
